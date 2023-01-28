@@ -19,7 +19,6 @@ function ProfileSection({ userProfile, isMyProfile, isFollowing }) {
   const [userBio, setUserBio] = useState();
 
   useEffect(() => {
-    console.log("Profile Details Name", userProfile);
     setUserName(userProfile?.name || "");
     setUserTotalPost(userProfile?.posts?.length || 0);
     setUserFollowers(userProfile?.followers?.length || 0);

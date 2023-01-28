@@ -15,7 +15,9 @@ function ShowReels() {
     fetchReelsData();
   }, []);
 
-  useEffect(() => {}, [reelsData]);
+  useEffect(() => {
+    console.log('Reels Data',reelsData);
+  }, [reelsData]);
   return (
     <div className="ShowReels">
       {reelsData.length === 0 && (
