@@ -1,0 +1,51 @@
+.Feed {
+    width: 100vw;
+
+    .container {
+        display: flex;
+        gap: 40px;
+    }
+
+    .left-part {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .right-part {
+        margin-top: 20px;
+        flex: 1;
+    }
+
+    .suggestions {
+        margin-top: 40px;
+    }
+
+    .title {
+        margin-bottom: 12px;
+
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .Feed {
+
+        width: 80%;
+
+        .container {
+            .right-part {
+                display: none;
+            }
+        }
+    }
+
+}
+@media screen and (max-width: 710px) {
+    .Feed {
+
+        width: 100%;
+
+        
+    } 
+}

@@ -1,0 +1,28 @@
+.ShowReels {
+    width: 100%;
+    display: grid;
+    place-items: center;
+
+    .video-container {
+        position: relative;
+        width: 30%;
+        height: 90%;
+        overflow: auto;
+        max-width: 100%;
+        min-width: 320px;
+        border-radius: 20px;
+        background-color: black;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        box-shadow: 0 0 10px black;
+    }
+    .video-container::-webkit-scrollbar {
+        width: 0rem;
+        background-color: #F5F5F5;
+    }
+    
+    .video-container::-webkit-scrollbar-thumb {
+      background-color: #000000;
+    }
+}

@@ -1,0 +1,11 @@
+.ShowAllComments {
+    display: flex;
+    gap: 10px;
+
+    p {
+
+        margin-top: 20px;
+        max-width: 600px;
+        word-wrap: break-word;
+    }
+}

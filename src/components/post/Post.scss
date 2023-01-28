@@ -1,0 +1,157 @@
+.Post {
+    border: 1px solid var(--border-color);
+    // margin-top: 20px;
+    border-radius: 4px;
+
+    .heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        height: 60px;
+        padding: 20px;
+        cursor: pointer;
+
+        .profile-logo-name {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            padding: 6px 10px;
+        }
+    }
+
+    .content {
+        height: 400px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+        }
+    }
+
+    .footer {
+        padding: 20px;
+
+        .like-comment {
+            display: flex;
+            align-items: flex-start;
+
+            .like {
+                width: fit-content;
+                align-items: center;
+                gap: 10px;
+
+                .icon {
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+    
+                    &:active {
+                        transform: scale(1);
+                    }
+                }
+            }
+
+            .comment-icon {
+                font-size: 1.3rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                &:hover {
+                    transform: scale(1.1);
+                }
+
+                &:active {
+                    transform: scale(1);
+                }
+            }
+        }
+
+        .caption {
+            margin-top: 10px;
+            font-weight: 500;
+            color: black;
+        }
+
+        .total-comments {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .time-ago {
+            margin-top: 12px;
+            color: #aaa;
+        }
+
+        .timeAndDelete {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .delete-icon {
+                margin-top: 12px;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: rgb(247, 61, 61);
+                transform: scale(0.9);
+
+                &:hover {
+                    transform: scale(1);
+                    color: rgb(227, 38, 38);
+                }
+            }
+
+        }
+
+        .editCaption {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+
+            .input-comment {
+
+                input {
+                    margin-top: 5px;
+                    width: 100%;
+                    padding-block: 10px;
+                    outline: none;
+                    border: none;
+                    font-size: 1.1rem;
+                }
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex: 2;
+            }
+
+            .submit-comment {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    font-size: 1.1rem;
+                    cursor: pointer;
+                }
+
+                p:hover {
+                    color: rgb(130, 186, 168);
+                }
+
+                p:active {
+                    color: aquamarine;
+                }
+
+            }
+        }
+
+    }
+}

@@ -1,0 +1,14 @@
+.ShowStories {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #212121;
+
+    .story-container {
+        box-shadow: 0 0 80px rgba(255, 255, 255, 0.132);
+        width: 400px;
+        height: 100vh;
+        // background-color: black;
+
+    }
+}

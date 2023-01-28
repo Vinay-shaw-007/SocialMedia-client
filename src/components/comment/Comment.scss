@@ -1,0 +1,29 @@
+.Comment {
+    width: 100vw;
+    .container {
+        display: flex;
+        gap: 20px;
+
+        .left-part-comment {
+            flex: 2;
+
+            .comments-heading {
+                margin-left: 2px;
+                text-align: center;
+                padding-bottom: 10px;
+                border-bottom: 1px solid var(--border-color);
+            }
+        }
+
+        .right-part-comment {
+            flex: 1;
+            margin-top: 20px;
+
+            .likes {
+                margin-left: 2px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid var(--border-color);
+            }
+        }
+    }
+}
