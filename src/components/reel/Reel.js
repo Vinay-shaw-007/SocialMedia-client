@@ -5,7 +5,6 @@ import {
 } from "react-icons/bs";
 import { FaPlay } from "react-icons/fa";
 import { FiSend } from "react-icons/fi";
-import vd1 from "../../assests/video3.mp4";
 import "./Reel.scss";
 
 function Reel({ reel }) {
@@ -27,7 +26,7 @@ function Reel({ reel }) {
           className="video-player"
           ref={videoRef}
           onClick={handleVideoClick}
-          src={reel?.url ? reel?.url : vd1}
+          src={reel?.url}
           loop
         />
         <div className="show-options">
