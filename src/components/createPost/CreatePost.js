@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { BsCameraReels, BsCardImage } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { TOAST_FAILURE } from "../../App";
+import { TOAST_FAILURE, TOAST_SUCCESS } from "../../App";
 import { showToast } from "../../redux/slices/appConfigSlice";
 import { getUserProfile } from "../../redux/slices/postsSlice";
 import { axiosClient } from "../../utils/axiosClient";
@@ -63,6 +63,30 @@ function CreatePost() {
 
   const handlePostSubmit = async () => {
     try {
+      if (postImg === "") {
+        return dispatch(
+          showToast({
+            type: TOAST_FAILURE,
+            message: "Image is required",
+          })
+        );
+      }
+      if (postVideo === "") {
+        return dispatch(
+          showToast({
+            type: TOAST_FAILURE,
+            message: "Video is required",
+          })
+        );
+      }
+      if (caption === "") {
+        return dispatch(
+          showToast({
+            type: TOAST_FAILURE,
+            message: "Caption is required",
+          })
+        );
+      }
       {
         postImg &&
           (await axiosClient.post("/posts", {
