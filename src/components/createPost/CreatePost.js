@@ -1,9 +1,8 @@
 import React, { useRef, useState } from "react";
 import { BsCameraReels, BsCardImage } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { TOAST_FAILURE, TOAST_SUCCESS } from "../../App";
+import { TOAST_FAILURE } from "../../App";
 import { showToast } from "../../redux/slices/appConfigSlice";
-import { getUserProfile } from "../../redux/slices/postsSlice";
 import { axiosClient } from "../../utils/axiosClient";
 import Avatar from "../avatar/Avatar";
 import "./CreatePost.scss";
@@ -63,22 +62,6 @@ function CreatePost() {
 
   const handlePostSubmit = async () => {
     try {
-      if (postImg === "") {
-        return dispatch(
-          showToast({
-            type: TOAST_FAILURE,
-            message: "Image is required",
-          })
-        );
-      }
-      if (postVideo === "") {
-        return dispatch(
-          showToast({
-            type: TOAST_FAILURE,
-            message: "Video is required",
-          })
-        );
-      }
       if (caption === "") {
         return dispatch(
           showToast({
@@ -87,21 +70,19 @@ function CreatePost() {
           })
         );
       }
-      {
-        postImg &&
-          (await axiosClient.post("/posts", {
-            caption,
-            postImg,
-          }));
-      }
 
-      {
-        postVideo &&
-          (await axiosClient.post("/reels", {
-            caption,
-            postReel: postVideo,
-          }));
-      }
+      (postImg || postImg !== "") &&
+        (await axiosClient.post("/posts", {
+          caption,
+          postImg,
+        }));
+
+      (postVideo || postVideo !== "") &&
+        (await axiosClient.post("/reels", {
+          caption,
+          postReel: postVideo,
+        }));
+        
     } catch (e) {
       console.log("post error", e);
     } finally {
