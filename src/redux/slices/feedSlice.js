@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { axiosClient } from "../../utils/axiosClient";
 import { likeAndUnlikePost } from "./postsSlice";
+import { deleteMyStroy, deleteStories } from "./storiesSlice";
 
 export const getFeedData = createAsyncThunk("user/getFeedData", async () => {
   try {
@@ -53,6 +54,13 @@ const feedSlice = createSlice({
           state?.feedData?.followings.splice(index, 1);
         } else {
           state?.feedData?.followings.push(user);
+        }
+      })
+      .addCase(deleteStories.fulfilled, (state, action) => {
+        const storyId = action.payload;
+        const index = state?.feedData?.followerStories?.findIndex(item => item.id === storyId)
+        if (index !== undefined && index !== -1) {
+          state?.feedData?.followerStories?.splice(index, 1);
         }
       });
   },

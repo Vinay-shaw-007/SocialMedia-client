@@ -6,7 +6,6 @@ export const uploadStories = createAsyncThunk(
   async (body) => {
     try {
       const response = await axiosClient.post("/stories/uploadStories", body);
-      console.log("uploaded data", response.result);
       return response.result;
     } catch (e) {
       return Promise.reject(e);
@@ -18,10 +17,20 @@ export const fetchStories = createAsyncThunk(
   "stories/fetchStories",
   async (body) => {
     try {
-      console.log("fetched stories id", body);
       const response = await axiosClient.post("/stories/fetchStories", body);
-      console.log("fetched stories data", response.result.allStories.stories);
       return response.result.allStories.stories;
+    } catch (e) {
+      return Promise.reject(e);
+    }
+  }
+);
+
+export const deleteStories = createAsyncThunk(
+  "stories/deleteStory",
+  async (body) => {
+    try {
+      await axiosClient.post("/stories/deleteStory", body);
+      return body.storiesId;
     } catch (e) {
       return Promise.reject(e);
     }

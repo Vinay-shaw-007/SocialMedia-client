@@ -37,42 +37,12 @@ function Profile() {
             isFollowing={isFollowing}
           />
           <div className="posts-reels-container">
-            <Tablayout userProfile={userProfile} reels={userProfile?.reelId?.reels}/>
-            {/* {userProfile?.posts?.map((post) => (
-              <Post key={post._id} post={post} />
-            ))} */}
+            <Tablayout
+              userProfile={userProfile}
+              reels={userProfile?.reelId?.reels}
+            />
           </div>
         </div>
-        {/* <div className="right-part">
-          <div className="profile-card">
-            <img className="user-img" src={userProfile?.avatar?.url} alt="" />
-            <h3 className="user-name">{userProfile?.name}</h3>
-            <p className="bio">{userProfile?.bio}</p>
-            <div className="follower-info">
-              <h4>{`${userProfile?.followers?.length} Followers`}</h4>
-              <h4>{`${userProfile?.followings?.length} Followings`}</h4>
-            </div>
-            {!isMyProfile && (
-              <h5
-                style={{ marginTop: "10px" }}
-                onClick={handleUserFollow}
-                className={
-                  isFollowing ? "hover-link follow-link" : "btn-primary"
-                }>
-                {isFollowing ? "Unfollow" : "Follow"}
-              </h5>
-            )}
-            {isMyProfile && (
-              <button
-                className="update-profile btn-secondary"
-                onClick={() => {
-                  navigate("/updateProfile");
-                }}>
-                Update Profile
-              </button>
-            )}
-          </div>
-        </div> */}
       </div>
     </div>
   );

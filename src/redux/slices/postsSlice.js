@@ -43,8 +43,6 @@ export const getSpecificPostDetails = createAsyncThunk(
 export const updatePost = createAsyncThunk("", async (body) => {
   try {
     const response = await axiosClient.put("/posts/", body);
-    console.log(response.result);
-    console.log("updated Post details", response.result);
     return response.result.post;
   } catch (e) {
     return Promise.reject(e);
@@ -54,7 +52,6 @@ export const updatePost = createAsyncThunk("", async (body) => {
 export const deletePost = createAsyncThunk("post/deletePost", async (body) => {
   try {
     const response = await axiosClient.post("/posts/delete", body);
-    console.log("hgftgf", response.result);
     return body.postId;
   } catch (e) {
     return Promise.reject(e);

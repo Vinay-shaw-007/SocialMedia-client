@@ -12,7 +12,6 @@ function Comment() {
   const post = useSelector((state) => state.postsReducer.specificPostDetails);
   const params = useParams();
 
-  console.log("post details with comments", post);
 
   useEffect(() => {
     try {

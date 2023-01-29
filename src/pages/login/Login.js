@@ -16,7 +16,6 @@ function Login() {
                 email,
                 password,
             });
-            console.log(response);
             setItem(KEY_ACCESS_TOKEN, response.result.accessToken);
             navigate('/')
             

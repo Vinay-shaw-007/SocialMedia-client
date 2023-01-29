@@ -20,7 +20,6 @@ function CreatePost() {
   const handleImageChange = (e) => {
     setPostVideo("");
     const file = e.target.files[0];
-    console.log("create post", file);
     const fileReader = new FileReader();
     fileReader.readAsDataURL(file);
     fileReader.onload = () => {
@@ -43,7 +42,6 @@ function CreatePost() {
   function handleVideoChange(e) {
     setPostImg("");
     const file = e.target.files[0];
-    console.log("create post", file);
     const fileReader = new FileReader();
     fileReader.readAsDataURL(file);
     fileReader.onload = () => {

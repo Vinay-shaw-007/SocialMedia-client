@@ -3,12 +3,29 @@
     align-items: center;
     justify-content: center;
     background-color: #212121;
+    position: relative;
 
     .story-container {
         box-shadow: 0 0 80px rgba(255, 255, 255, 0.132);
         width: 400px;
         height: 100vh;
-        // background-color: black;
+    }
 
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .delete-story-btn {
+        position: absolute;
+        top: 15px;
+        left: 25px;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
     }
 }

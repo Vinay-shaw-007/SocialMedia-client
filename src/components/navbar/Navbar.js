@@ -26,16 +26,6 @@ function Navbar() {
   const myProfile = useSelector((state) => state.appConfigReducer.myProfile);
   console.log("under Navbar ", myProfile);
 
-  // async function handleLogoutClicked() {
-  //   try {
-  //     await axiosClient.post("/auth/logout");
-  //     removeItem(KEY_ACCESS_TOKEN);
-  //     navigate("/login");
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
-
   function handleWorkInProgress() {
     dispatch(
       showToast({

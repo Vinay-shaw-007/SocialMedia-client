@@ -16,7 +16,6 @@ function ShowReels() {
   }, []);
 
   useEffect(() => {
-    console.log('Reels Data',reelsData);
   }, [reelsData]);
   return (
     <div className="ShowReels">

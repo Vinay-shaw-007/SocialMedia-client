@@ -50,7 +50,6 @@ function UpdateProfile() {
       });
       removeItem(KEY_ACCESS_TOKEN);
       navigate("/login");
-      console.log('delete successful', response.result);
     } catch (error) {
       console.log("delete failed ", error);
     }

@@ -16,8 +16,6 @@ function SignUp() {
                 email,
                 password,
             });
-            console.log(result);
-
             
         } catch (error) {
             console.log(error);

@@ -28,7 +28,6 @@ function Post({ post }) {
   }, [myProfile?._id, post?.owner?._id, dispatch]);
 
   function handlePostLiked() {
-    console.log(post.isLiked);
     let message;
     message = post.isLiked ? "Unliked" : "Liked";
     dispatch(

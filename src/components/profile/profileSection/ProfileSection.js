@@ -5,7 +5,10 @@ import settingIcon from "../../../assests/setting_icon.svg";
 import dummyUserImg from "../../../assests/user.png";
 import { followAndUnfollowUser } from "../../../redux/slices/feedSlice";
 import { axiosClient } from "../../../utils/axiosClient";
-import { KEY_ACCESS_TOKEN, removeItem } from "../../../utils/localStorageManager";
+import {
+  KEY_ACCESS_TOKEN,
+  removeItem,
+} from "../../../utils/localStorageManager";
 import "./ProfileSection.scss";
 
 function ProfileSection({ userProfile, isMyProfile, isFollowing }) {
@@ -17,6 +20,8 @@ function ProfileSection({ userProfile, isMyProfile, isFollowing }) {
   const [userFollowings, setUserFollowings] = useState();
   const [userImg, setUserImg] = useState();
   const [userBio, setUserBio] = useState();
+  const [userStoriesId, setUserStoriesId] = useState();
+
 
   useEffect(() => {
     setUserName(userProfile?.name || "");
@@ -25,6 +30,7 @@ function ProfileSection({ userProfile, isMyProfile, isFollowing }) {
     setUserFollowings(userProfile?.followings?.length || 0);
     setUserImg(userProfile?.avatar?.url || dummyUserImg);
     setUserBio(userProfile?.bio || "");
+    setUserStoriesId(userProfile?.storiesId || null);
   }, [userProfile]);
 
   function handleUserFollow() {
@@ -45,10 +51,20 @@ function ProfileSection({ userProfile, isMyProfile, isFollowing }) {
     }
   }
 
+  function handleStoriesClick() {
+    {
+      userStoriesId && navigate(`/stories/${userStoriesId}`);
+    }
+  }
+
   return (
     <div className="ProfileSection">
       <div className="container">
-        <div className="left_part">
+        <div
+          className={
+            userStoriesId ? "left_part show-story-indicator" : "left_part"
+          }
+          onClick={handleStoriesClick}>
           <img src={userImg} alt="" />
         </div>
         <div className="right_part">
