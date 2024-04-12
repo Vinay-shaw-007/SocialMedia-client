@@ -42,7 +42,7 @@ axiosClient.interceptors.response.use(
         message: error,
       })
     );
-
+    //!originalRequest._retry -> This is usually done to avoid an infinite loop in case the request fails again after refreshing the token.
     if (statusCode === 401 && !originalRequest._retry) {
       // means the access token has expired
       originalRequest._retry = true;
